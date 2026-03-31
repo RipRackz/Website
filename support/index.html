@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Rackz Tweaks</title>
+  <link rel="icon" type="image/png" href="../images/Rackz-MainV2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --c: #00BFFF;
+      --c2: #0099CC;
+      --c-glow: rgba(0,191,255,0.55);
+      --c-soft: rgba(0,191,255,0.08);
+      --c-border: rgba(0,191,255,0.18);
+      --bg: #04040A;
+      --glass: rgba(255,255,255,0.03);
+      --glass-border: rgba(255,255,255,0.07);
+      --text: #E2E2F0;
+      --muted: #5A5A78;
+      --fd: 'Rajdhani', sans-serif;
+      --fb: 'Inter', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--fb); font-size: 16px; line-height: 1.6; min-height: 100vh; }
+    a { color: var(--c); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 1000; height: 68px;
+      display: flex; align-items: center; padding: 0 32px;
+      background: rgba(4,4,10,0.85); backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav__inner { max-width: 1000px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav__logo img { width: 28px; height: 28px; object-fit: contain; filter: drop-shadow(0 0 8px var(--c-glow)); }
+    .nav__logo-text { font-family: var(--fd); font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; color: var(--text); }
+    .nav__logo-text .hi { color: var(--c); }
+    .nav__back { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 600; color: var(--muted); transition: color 0.2s; }
+    .nav__back:hover { color: var(--text); text-decoration: none; }
+
+    .page-hero {
+      padding: 72px 32px 56px; text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(0,191,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero__chip {
+      display: inline-flex; align-items: center; gap: 7px; padding: 5px 16px;
+      border: 1px solid var(--c-border); border-radius: 100px;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--c); background: var(--c-soft); margin-bottom: 20px;
+    }
+    .page-hero__title { font-family: var(--fd); font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .page-hero__title .hi { background: linear-gradient(90deg, #00BFFF, #7DF9FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-hero__sub { font-size: 0.92rem; color: var(--muted); max-width: 420px; margin: 0 auto; line-height: 1.7; }
+
+    .support-wrap {
+      max-width: 860px; margin: 0 auto; padding: 72px 32px 100px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    @media (max-width: 640px) { .support-wrap { grid-template-columns: 1fr; } }
+
+    .support-card {
+      position: relative; overflow: hidden;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: 16px; padding: 40px 32px;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .support-card:hover { border-color: var(--c-border); box-shadow: 0 0 32px rgba(0,191,255,0.06); }
+
+    .support-card__icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .support-card__icon.discord { background: rgba(88,101,242,0.12); border: 1px solid rgba(88,101,242,0.25); color: #8b96f8; }
+    .support-card__icon.email   { background: var(--c-soft); border: 1px solid var(--c-border); color: var(--c); }
+
+    .support-card__label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .support-card__title {
+      font-family: var(--fd); font-size: 1.5rem; font-weight: 700;
+      letter-spacing: 0.04em; color: var(--text); margin-top: -4px;
+    }
+    .support-card__desc {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.75;
+      flex: 1;
+    }
+    .support-card__btn {
+      margin-top: 8px; display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 24px; border-radius: 9px;
+      font-family: var(--fd); font-size: 0.9rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      transition: box-shadow 0.2s, transform 0.15s, background 0.2s;
+      text-decoration: none;
+    }
+    .support-card__btn:hover { transform: translateY(-2px); text-decoration: none; }
+    .support-card__btn.discord { background: #5865F2; color: #fff; }
+    .support-card__btn.discord:hover { background: #6876f5; box-shadow: 0 0 24px rgba(88,101,242,0.4); }
+    .support-card__btn.email { background: var(--c-soft); border: 1px solid var(--c-border); color: var(--c); }
+    .support-card__btn.email:hover { background: rgba(0,191,255,0.12); box-shadow: 0 0 24px rgba(0,191,255,0.2); }
+
+    .support-card__glow {
+      position: absolute; pointer-events: none; border-radius: 50%;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .support-card:hover .support-card__glow { opacity: 1; }
+    .support-card__glow.discord { top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(ellipse, rgba(88,101,242,0.08) 0%, transparent 70%); }
+    .support-card__glow.email   { top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(ellipse, rgba(0,191,255,0.07) 0%, transparent 70%); }
+
+    footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 28px 32px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; }
+    .footer-logo img { width: 20px; height: 20px; object-fit: contain; opacity: 0.5; }
+    .footer-logo-text { font-family: var(--fd); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); }
+    .footer-logo-text span { color: var(--c); }
+    .footer-copy { font-size: 0.74rem; color: var(--muted); }
+    .footer-legal { display: flex; gap: 16px; }
+    .footer-legal a { font-size: 0.74rem; color: var(--muted); transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--c); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="/">
+        <img src="../images/Rackz-TransparentV2.png" alt="Rackz" />
+        <div class="nav__logo-text"><span class="hi">RACKZ</span> TWEAKS</div>
+      </a>
+      <a class="nav__back" href="/"><i class="fa-solid fa-arrow-left"></i> Back to site</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero__chip"><i class="fa-solid fa-headset"></i> Support</div>
+    <h1 class="page-hero__title">Get in <span class="hi">Touch</span></h1>
+    <p class="page-hero__sub">Choose the right channel depending on your needs. We're available 24/7.</p>
+  </div>
+
+  <div class="support-wrap">
+
+    <div class="support-card">
+      <div class="support-card__glow discord"></div>
+      <div class="support-card__icon discord"><i class="fa-brands fa-discord"></i></div>
+      <div>
+        <div class="support-card__label">Community &amp; Product Support</div>
+        <div class="support-card__title">Discord Server</div>
+      </div>
+      <p class="support-card__desc">
+        For product questions, general help, troubleshooting, bug reports, or anything else related to Rackz services — join the Discord server and open a support ticket.
+      </p>
+      <a class="support-card__btn discord" href="https://discord.gg/pYtfjAaFf4" target="_blank" rel="noopener">
+        <i class="fa-brands fa-discord"></i> Join Discord
+      </a>
+    </div>
+
+    <div class="support-card">
+      <div class="support-card__glow email"></div>
+      <div class="support-card__icon email"><i class="fa-solid fa-envelope"></i></div>
+      <div>
+        <div class="support-card__label">Private &amp; Business Enquiries</div>
+        <div class="support-card__title">Email</div>
+      </div>
+      <p class="support-card__desc">
+        For business partnerships, private matters, or anything you'd prefer to discuss directly with Rackz — reach out via email and expect a response within 24–48 hours.
+      </p>
+      <a class="support-card__btn email" href="mailto:support@rackztweaks.com">
+        <i class="fa-solid fa-envelope"></i> support@rackztweaks.com
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../images/Rackz-TransparentV2.png" alt="Rackz" />
+        <span class="footer-logo-text"><span>RACKZ</span> TWEAKS</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Rackz. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/policies/terms-of-service/">Terms</a>
+        <a href="/policies/privacy-policy/">Privacy</a>
+        <a href="/policies/refund-policy/">Refund Policy</a>
+        <a href="/support/">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
