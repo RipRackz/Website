@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy — Rackz Optimizer</title>
+  <link rel="icon" type="image/png" href="../Rackz%20Optimizer%20assets/Rackz-MainV2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --c: #00BFFF;
+      --c2: #0099CC;
+      --c-glow: rgba(0,191,255,0.55);
+      --c-soft: rgba(0,191,255,0.08);
+      --c-border: rgba(0,191,255,0.18);
+      --bg: #04040A;
+      --glass: rgba(255,255,255,0.03);
+      --glass-border: rgba(255,255,255,0.07);
+      --text: #E2E2F0;
+      --muted: #5A5A78;
+      --fd: 'Rajdhani', sans-serif;
+      --fb: 'Inter', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--fb); font-size: 16px; line-height: 1.6; min-height: 100vh; }
+    a { color: var(--c); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 1000; height: 68px;
+      display: flex; align-items: center; padding: 0 32px;
+      background: rgba(4,4,10,0.85); backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav__inner { max-width: 1000px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav__logo img { width: 28px; height: 28px; object-fit: contain; filter: drop-shadow(0 0 8px var(--c-glow)); }
+    .nav__logo-text { font-family: var(--fd); font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; color: var(--text); }
+    .nav__logo-text .hi { color: var(--c); }
+    .nav__back { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 600; color: var(--muted); transition: color 0.2s; }
+    .nav__back:hover { color: var(--text); text-decoration: none; }
+
+    .page-hero {
+      padding: 72px 32px 56px; text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(0,191,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero__chip {
+      display: inline-flex; align-items: center; gap: 7px; padding: 5px 16px;
+      border: 1px solid var(--c-border); border-radius: 100px;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--c); background: var(--c-soft); margin-bottom: 20px;
+    }
+    .page-hero__title { font-family: var(--fd); font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .page-hero__title .hi { background: linear-gradient(90deg, #00BFFF, #7DF9FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-hero__meta { font-size: 0.82rem; color: var(--muted); }
+
+    .legal-wrap { max-width: 780px; margin: 0 auto; padding: 64px 32px 100px; }
+    .legal-section { margin-bottom: 44px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .legal-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .legal-section h2 {
+      font-family: var(--fd); font-size: 1.15rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--c); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .legal-section h2::before {
+      content: ''; display: inline-block; width: 3px; height: 18px;
+      background: var(--c); border-radius: 2px;
+      box-shadow: 0 0 8px var(--c-glow); flex-shrink: 0;
+    }
+    .legal-section p { font-size: 0.92rem; color: #9090A8; line-height: 1.85; margin-bottom: 12px; }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .legal-section ul li { font-size: 0.9rem; color: #9090A8; line-height: 1.7; padding-left: 18px; position: relative; }
+    .legal-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--c); font-size: 0.75rem; top: 2px; }
+    .legal-section strong { color: var(--text); font-weight: 600; }
+    .legal-highlight {
+      background: rgba(0,191,255,0.05); border: 1px solid var(--c-border);
+      border-radius: 10px; padding: 16px 20px; margin-top: 14px;
+    }
+    .legal-highlight p { margin-bottom: 6px; }
+    .legal-highlight p:last-child { margin-bottom: 0; }
+    .legal-warn {
+      background: rgba(210,65,65,0.06); border: 1px solid rgba(210,65,65,0.2);
+      border-radius: 10px; padding: 16px 20px; margin-top: 14px;
+    }
+    .legal-warn p { color: #c87070; margin-bottom: 0; }
+
+    footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 28px 32px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; }
+    .footer-logo img { width: 20px; height: 20px; object-fit: contain; opacity: 0.5; }
+    .footer-logo-text { font-family: var(--fd); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--muted); }
+    .footer-logo-text span { color: var(--c); }
+    .footer-copy { font-size: 0.74rem; color: var(--muted); }
+    .footer-legal { display: flex; gap: 16px; }
+    .footer-legal a { font-size: 0.74rem; color: var(--muted); transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--c); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html">
+        <img src="../Rackz%20Optimizer%20assets/Rackz-TransparentV2.png" alt="Rackz Optimizer" />
+        <div class="nav__logo-text"><span class="hi">RACKZ</span> OPTIMIZER</div>
+      </a>
+      <a class="nav__back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to site</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero__chip"><i class="fa-solid fa-rotate-left"></i> Legal</div>
+    <h1 class="page-hero__title">Refund <span class="hi">Policy</span></h1>
+    <p class="page-hero__meta">Effective date: August 8, 2025 &nbsp;·&nbsp; Rackz &nbsp;·&nbsp; rackztweaks.com</p>
+  </div>
+
+  <div class="legal-wrap">
+
+    <div class="legal-section">
+      <p>By purchasing any products or services from Rackz, you acknowledge that you have read, understood, and agree to be legally bound by this Refund Policy in its entirety.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>1. No Refunds Policy</h2>
+      <p><strong>ALL SALES ARE FINAL.</strong> Due to the digital and proprietary nature of our products and services, Rackz does <strong>not</strong> offer refunds, exchanges, returns, cancellations, or any form of monetary reimbursement once a purchase transaction has been completed and payment processed.</p>
+      <p>This policy applies to all digital products, software licenses, services, and any other offerings provided by Rackz.</p>
+      <div class="legal-highlight">
+        <p><strong>Limited Exception:</strong> The sole exception to this policy is when a product demonstrably fails to function as described due to technical defects, and only at the absolute discretion of Rackz management. Any such determination shall be final and non-appealable.</p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Dispute Resolution and Protective Measures</h2>
+      <p><strong>IMMEDIATE PROTECTIVE ACTION:</strong> Upon initiation of any chargeback, dispute, claim, or challenge to payment through any payment processor, financial institution, or third party, Rackz is immediately authorized and entitled to implement any or all of the following protective measures without prior notice:</p>
+      <ul>
+        <li>Immediate license termination of all software and services</li>
+        <li>Account suspension or permanent ban from all Rackz platforms, servers, and communities</li>
+        <li>Software deactivation and revocation of all access privileges</li>
+        <li>Reversal of all software modifications and restoration to original state</li>
+        <li>Data removal from our systems and servers</li>
+        <li>Blacklisting from future purchases or services</li>
+        <li>Legal action to recover damages and costs</li>
+      </ul>
+      <div class="legal-warn">
+        <p><strong>WAIVER OF DISPUTE RIGHTS:</strong> By purchasing from Rackz, you expressly waive your right to initiate chargebacks, payment disputes, or claims with payment processors for any reason other than unauthorized use of your payment method by third parties.</p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Customer Acknowledgments and Responsibilities</h2>
+      <p>Before completing any purchase, you acknowledge and agree that:</p>
+      <ul>
+        <li>You have thoroughly reviewed all product descriptions, specifications, system requirements, and compatibility information</li>
+        <li>You understand the digital nature of the products and the no-refund policy</li>
+        <li>You have the technical knowledge to use the products or have consulted appropriate support</li>
+        <li>You are purchasing the product "AS IS" without any warranties beyond those legally required</li>
+        <li>You will contact support through official channels before considering any dispute action</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Contact and Support</h2>
+      <p><strong>Pre-Purchase Inquiries:</strong> All questions regarding products, compatibility, or functionality must be directed to our support team prior to purchase.</p>
+      <p><strong>Post-Purchase Support:</strong> Technical support for purchased products is available below. Support does not constitute grounds for refund eligibility.</p>
+      <div class="legal-highlight">
+        <p><strong>Email:</strong> <a href="mailto:support@rackztweaks.com">support@rackztweaks.com</a></p>
+        <p><strong>Website:</strong> <a href="https://rackztweaks.com" target="_blank" rel="noopener">rackztweaks.com</a></p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Policy Modifications</h2>
+      <p>Rackz reserves the absolute right to modify, update, or replace this Refund Policy at any time without prior notice. Changes become effective immediately upon posting on our website. Continued use of our products or services after policy changes constitutes acceptance of the modified terms.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Legal Enforceability</h2>
+      <p>This policy is governed by applicable consumer protection laws while maintaining the strongest legal protections available to Rackz. If any provision is deemed unenforceable, the remainder of the policy remains in full effect.</p>
+      <p><strong>Severability Clause:</strong> If any part of this policy is found to be unenforceable by a court of competent jurisdiction, such finding shall not affect the enforceability of the remaining provisions.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Binding Agreement</h2>
+      <div class="legal-warn">
+        <p>BY COMPLETING A PURCHASE, YOU ACKNOWLEDGE THAT:</p>
+      </div>
+      <ul style="margin-top:14px">
+        <li>You have read and fully understand this Refund Policy</li>
+        <li>You agree to be legally bound by all terms and conditions</li>
+        <li>You waive any claims for refunds beyond those explicitly stated herein</li>
+        <li>You consent to the protective measures outlined in Section 2</li>
+      </ul>
+      <p style="margin-top:20px">Thank you for your understanding and compliance with our policies.</p>
+      <p>— The Rackz Team</p>
+      <p style="margin-top:14px; font-size:0.8rem; color:var(--muted)">This policy constitutes a binding legal agreement between you and Rackz.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="../Rackz%20Optimizer%20assets/Rackz-TransparentV2.png" alt="" />
+        <span class="footer-logo-text"><span>RACKZ</span> OPTIMIZER</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Rackz. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="refund.html">Refund Policy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
