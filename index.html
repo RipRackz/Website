@@ -1384,7 +1384,7 @@
           <li><i class="fa-solid fa-check"></i> Tweaks stay applied if you cancel</li>
           <li><i class="fa-solid fa-check"></i> Discord support</li>
         </ul>
-        <a class="pricing-buy pricing-buy--secondary" href="#" onclick="openLoginModal('monthly');return false;">Get Monthly Access</a>
+        <a class="pricing-buy pricing-buy--secondary" href="#">Get Monthly Access</a>
       </div>
 
       <div class="pricing-card pricing-card--featured">
@@ -1402,7 +1402,7 @@
           <li><i class="fa-solid fa-check"></i> Tweaks stay applied forever</li>
           <li><i class="fa-solid fa-check"></i> Priority Discord support</li>
         </ul>
-        <a class="pricing-buy pricing-buy--primary" href="#" onclick="openLoginModal('lifetime');return false;"><i class="fa-solid fa-bolt"></i> Get Lifetime Access</a>
+        <a class="pricing-buy pricing-buy--primary" href="#"><i class="fa-solid fa-bolt"></i> Get Lifetime Access</a>
       </div>
 
     </div>
@@ -1968,34 +1968,6 @@
   });
   </script>
 
-<!-- ── Login Modal ── -->
-<div id="login-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;">
-  <div onclick="closeLoginModal()" style="position:absolute;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);"></div>
-  <div style="position:relative;background:#0d0d1a;border:1px solid rgba(0,191,255,0.2);border-radius:16px;padding:48px 40px;width:100%;max-width:420px;margin:16px;text-align:center;">
-    <button onclick="closeLoginModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#5A5A78;font-size:20px;cursor:pointer;line-height:1;">✕</button>
-    <div style="font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:700;color:#E2E2F0;letter-spacing:2px;margin-bottom:8px;">LOG IN</div>
-    <div style="color:#5A5A78;font-size:13px;margin-bottom:32px;">Connect your Discord to continue with your purchase.</div>
-    <a id="login-modal-btn" href="#" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#5865F2;color:#fff;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-      <svg width="20" height="20" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M60.105 4.898A58.55 58.55 0 0 0 45.641.271a.219.219 0 0 0-.232.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.883-.817-16.23 0a37.37 37.37 0 0 0-1.827-3.697.228.228 0 0 0-.232-.11 58.386 58.386 0 0 0-14.464 4.627.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.461 11.956 7.167 17.729 8.961a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.031c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .232.028c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.226.226 0 0 0-.12.315 47.249 47.249 0 0 0 3.623 5.897.225.225 0 0 0 .249.084c5.8-1.794 11.684-4.5 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084zm-36.38 32.427c-3.497 0-6.381-3.211-6.381-7.156 0-3.944 2.827-7.156 6.381-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.382 7.156zm23.593 0c-3.498 0-6.382-3.211-6.382-7.156 0-3.944 2.827-7.156 6.382-7.156 3.582 0 6.437 3.24 6.381 7.156 0 3.945-2.826 7.156-6.381 7.156z" fill="#fff"/></svg>
-      Continue with Discord
-    </a>
-    <div style="margin-top:16px;color:#3a3a52;font-size:11px;">We only use Discord to identify you. We never post on your behalf.</div>
-  </div>
-</div>
-
-<script>
-  function openLoginModal(plan) {
-    document.getElementById('login-modal-btn').href = '/auth/discord?plan=' + plan;
-    const modal = document.getElementById('login-modal');
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLoginModal() {
-    document.getElementById('login-modal').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLoginModal(); });
-</script>
 
 </body>
 </html>
